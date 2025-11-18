@@ -1,0 +1,38 @@
+{% include "includes/header.html" %}
+{% load static %}
+
+<div class="container">
+    <h2 class="mb-4">Algorithme : Arbre de Décision</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Détails :</h3>
+            <p>
+                L’arbre de décision est un algorithme d’apprentissage supervisé utilisé pour 
+                la classification et la régression. Il consiste à diviser les données en sous-groupes 
+                selon les caractéristiques, afin de prendre des décisions basées sur un ensemble de règles hiérarchiques.
+            </p>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Caractéristiques :</h3>
+            <ul>
+                <li>Simple à comprendre et interpréter</li>
+                <li>Fonctionne pour la classification et la régression</li>
+                <li>Représentation sous forme d’arbre</li>
+                <li>Peut gérer des données catégorielles ou numériques</li>
+            </ul>
+        </div>
+    </div>
+
+    <iframe src="{% static 'pdfs/arbre_decision.pdf' %}" 
+            width="100%" 
+            height="600px" 
+            style="border:1px solid #ccc; margin-top: 20px;">
+        Ce navigateur ne supporte pas les PDF. Veuillez le télécharger :)
+        <a href="{% static 'pdfs/arbre_decision.pdf' %}">Télécharger PDF</a>
+    </iframe>
+
+</div>
+
+{% include "includes/footer.html" %}

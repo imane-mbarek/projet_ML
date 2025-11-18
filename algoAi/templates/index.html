@@ -1,0 +1,113 @@
+{% include "includes/header.html" %}
+{% load static %}
+<div class="container">
+    <h2 class="mb-4">Les Algorithmes</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header">Algorithme Régression Logistique</h5>
+                <div class="card-body">
+                    <img src="{% static 'images/regression_logistique.jpg' %}" class="card-img-top" alt="Régression Logistique">
+                    <div class="card-text mt-3">
+                        <p>
+                            L'algorithme Régression Logistique est un algorithme d'apprentissage suppervisé de classification
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer center">
+                    <a class="btn btn-info col-12 mt-2" href="{% url 'reglog_details' %}">Plus détails</a>
+                    <a class="btn btn-success col-12 mt-2" href="{% url 'reglog_atelier_C' %}">Exemple de Classification</a>
+                    <a class="btn btn-warning col-12 mt-2" href="{-}">Exemple de Régression</a>
+                    
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header">Algorithme Arbre de Décision</h5>
+                <div class="card-body">
+                    <img src="{% static 'images/regression_logistique.jpg' %}" class="card-img-top" alt="Régression Logistique">
+                    <div class="card-text mt-3">
+                        <p>
+                            L'algorithme Arbre de Décision est un modèle d'apprentissage supervisé utilisé pour la classification et la régression.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer center">
+                    <a class="btn btn-info col-12 mt-2" href="{% url 'arbre_decision_details' %}">Plus détails</a>
+                    <a class="btn btn-success col-12 mt-2" href="{% url 'arbre_atelier_C' %}">Exemple de Classification</a>
+                    <a class="btn btn-warning col-12 mt-2" href="{% url 'reglog_atelier_C' %}">Exemple de Régression</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header">Algorithme SVM (Support Vector Machine)</h5>
+                <div class="card-body">
+                    <img src="{% static 'images/regression_logistique.jpg' %}" class="card-img-top" alt="Régression Logistique">
+                    <div class="card-text mt-3">
+                        <p>
+                            Le modèle SVM est un algorithme supervisé puissant qui trouve l'hyperplan optimal pour séparer les classes.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer center">
+                    <a class="btn btn-info col-12 mt-2" href="{% url 'svm_details' %}">Plus détails</a>
+                    <a class="btn btn-success col-12 mt-2" href="{% url 'svm_atelier_C' %}">Exemple de Classification</a>
+                    <a class="btn btn-warning col-12 mt-2" href="{% url 'svm_atelier_R' %}">Exemple de Régression</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header">Algorithme Random Forest</h5>
+                <div class="card-body">
+                    <img src="{% static 'images/regression_logistique.jpg' %}" class="card-img-top" alt="Régression Logistique">
+                    <div class="card-text mt-3">
+                        <p>
+                            Random Forest est un algorithme d'ensemble qui combine plusieurs arbres de décision pour améliorer la précision.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer center">
+                    <a class="btn btn-info col-12 mt-2" href="{% url 'random_forest_details' %}">Plus détails</a>
+                    <a class="btn btn-success col-12 mt-2" href="{% url 'random_forest_atelier_C' %}">Exemple de Classification</a>
+                    <a class="btn btn-warning col-12 mt-2" href="{% url 'reglog_atelier_C' %}">Exemple de Régression</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header">Algorithme XGBoost</h5>
+                <div class="card-body">
+                    <img src="{% static 'images/regression_logistique.jpg' %}" class="card-img-top" alt="Régression Logistique">
+                    <div class="card-text mt-3">
+                        <p>
+                            XGBoost est un algorithme basé sur le boosting, connu pour ses hautes performances en classification et régression.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer center">
+                    <a class="btn btn-info col-12 mt-2" href="{% url 'xgboost_details' %}">Plus détails</a>
+                    <a class="btn btn-success col-12 mt-2" href="{% url 'xgboost_atelier_C' %}">Exemple de Classification</a>
+                    <a class="btn btn-warning col-12 mt-2" href="{% url 'reglog_atelier_C' %}">Exemple de Régression</a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+{% include "includes/footer.html" %}
+
+index.html
+Displaying index.html.
