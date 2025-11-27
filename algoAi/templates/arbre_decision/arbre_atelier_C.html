@@ -6,13 +6,26 @@
 
     <div class="row">
         <div class="col-md-6">
-            <h3>Dataset des véhicules</h3>
+            <h3>Dataset Santé</h3>
             <p>
-                L’objectif de cette démonstration est de vous montrer comment on entraîne un modèle de régression
-                logistique pour classifier les véhicules en Camion ou Touristique selon le nombre de roues et la hauteur donnée.
-                Les modèles entraînés sont sauvegardés de cette atelier et vont être utilisés pour faire des classifications
-                à base des données qui vont être saisir par l’utilisateur de l’application via un formulaire une fois il clique
-                sur le bouton "Tester le modèle".
+                Dans cet atelier, nous allons entraîner un <strong>arbre de décision</strong> pour prédire
+                l’état de santé général (<strong>genhlth</strong>) d'une personne en fonction de plusieurs facteurs :
+            </p>
+
+            <ul>
+                <li>exerany : pratique du sport</li>
+                <li>hlthplan : couverture santé</li>
+                <li>smoke100 : a fumé plus de 100 cigarettes</li>
+                <li>height : taille (inches/cm selon dataset)</li>
+                <li>weight : poids</li>
+                <li>age : âge</li>
+                <li>gender : sexe (0 = Femme, 1 = Homme)</li>
+            </ul>
+
+            <p>
+                Le modèle entraîné est sauvegardé et pourra être utilisé lorsque l’utilisateur saisira
+                ses propres données dans un formulaire, puis cliquera sur
+                <strong>"Tester le modèle"</strong>.
             </p>
         </div>
 
@@ -23,7 +36,7 @@
     </div>
 
     <div>
-        <a class="btn btn-success col-12 mt-2 mb-2" href="{% url 'reglog_tester' %}">Tester le modèle</a>
+        <a class="btn btn-success col-12 mt-2 mb-2" href="{% url 'arbre_decision_tester' %}">Tester le modèle</a>
     </div>
 
     <iframe src="{% static 'pdfs/course_demonstration.pdf' %}"

@@ -1,0 +1,90 @@
+{% include "includes/header.html" %}
+{% load static %}
+
+<div class="container">
+    <h2 class="mb-4">Caractéristiques de la personne</h2>
+
+    <div class="ps-3 card">
+        <div class="card-title">
+            <img src="{% static 'images/illustration.JPG' %}" width="100%">
+        </div>
+
+        <div class="card-body">
+            <form method="post" action="{% url 'random_forest_prediction' %}" class="ps-4 pe-4 pt-4 pb-4">
+                {% csrf_token %}
+
+                <!-- exerany -->
+                <div class="mb-4">
+                    <label for="exerany" class="form-label">Fait du sport ? 0=Non, 1=Oui</label>
+                    <input type="range" class="form-range" min="0" max="1" step="1" id="exerany" name="exerany"
+                        oninput="exeranyValue.textContent = this.value">
+                    <span class="slider-value" id="exeranyValue">0</span>
+                </div>
+
+                <!-- hlthplan -->
+                <div class="mb-4">
+                    <label for="hlthplan" class="form-label">A un plan de santé ? 0=Non, 1=Oui</label>
+                    <input type="range" class="form-range" min="0" max="1" step="1" id="hlthplan" name="hlthplan"
+                        oninput="hlthplanValue.textContent = this.value">
+                    <span class="slider-value" id="hlthplanValue">1</span>
+                </div>
+
+                <!-- smoke100 -->
+                <div class="mb-4">
+                    <label for="smoke100" class="form-label">A fumé 100 cigarettes ? 0=Non, 1=Oui</label>
+                    <input type="range" class="form-range" min="0" max="1" step="1" id="smoke100" name="smoke100"
+                        oninput="smoke100Value.textContent = this.value">
+                    <span class="slider-value" id="smoke100Value">0</span>
+                </div>
+
+                <!-- height -->
+                <div class="mb-4">
+                    <label for="height" class="form-label">Taille (cm)</label>
+                    <input type="range" class="form-range" min="100" max="220" step="1" id="height" name="height"
+                        oninput="heightValue.textContent = this.value">
+                    <span class="slider-value" id="heightValue">170</span>
+                </div>
+
+                <!-- weight -->
+                <div class="mb-4">
+                    <label for="weight" class="form-label">Poids (kg)</label>
+                    <input type="range" class="form-range" min="35" max="200" step="1" id="weight" name="weight"
+                        oninput="weightValue.textContent = this.value">
+                    <span class="slider-value" id="weightValue">70</span>
+                </div>
+
+                <!-- age -->
+                <div class="mb-4">
+                    <label for="age" class="form-label">Âge</label>
+                    <input type="range" class="form-range" min="10" max="100" step="1" id="age" name="age"
+                        oninput="ageValue.textContent = this.value">
+                    <span class="slider-value" id="ageValue">40</span>
+                </div>
+
+                <!-- gender -->
+                <div class="mb-4">
+                    <label for="gender" class="form-label">Genre (0=Femme, 1=Homme)</label>
+                    <input type="range" class="form-range" min="0" max="1" step="1" id="gender" name="gender"
+                        oninput="genderValue.textContent = this.value">
+                    <span class="slider-value" id="genderValue">0</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-12">Predict</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include "includes/footer.html" %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    exeranyValue.textContent = exerany.value;
+    hlthplanValue.textContent = hlthplan.value;
+    smoke100Value.textContent = smoke100.value;
+    heightValue.textContent = height.value;
+    weightValue.textContent = weight.value;
+    ageValue.textContent = age.value;
+    genderValue.textContent = gender.value;
+});
+</script>

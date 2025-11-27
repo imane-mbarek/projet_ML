@@ -1,0 +1,32 @@
+{% include "includes/header.html" %}
+{% load static %}
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-header">
+            <strong>Résultat de la prédiction</strong>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <!-- Colonne image + état de santé -->
+                <div class="col-md-6">
+                    <h5 class="card-title">
+                        État de santé prédit :
+                        <span class="badge bg-success">{{ predicted_state }}</span>
+                    </h5>
+
+                    <img src="{% static img_vehicule %}" 
+                         class="img thumbnail card-img-top" 
+                         style="width:350px">
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "includes/footer.html" %}

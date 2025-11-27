@@ -1,0 +1,77 @@
+{% include "includes/header.html" %}
+{% load static %}
+
+<div class="container">
+    <h2 class="mb-4">Caractéristiques du Mélange de Béton</h2>
+
+    <div class="ps-3 card">
+        <div class="card-title">
+            <img src="{% static 'images/illustration.JPG' %}" width="100%">
+        </div>
+
+        <div class="card-body">
+            <form method="post" action="{% url 'svm_prediction' %}" class="ps-4 pe-4 pt-4 pb-4">
+                {% csrf_token %}
+
+                <div class="mb-4">
+                    <label for="ciment" class="form-label">Ciment (Quantité normalisée)</label>
+                    <input type="range" class="form-range" min="-2.5" max="2.5" step="0.01" id="ciment" name="ciment"
+                        oninput="cimentValue.textContent = this.value">
+                    <span class="slider-value" id="cimentValue">0.00</span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="eau" class="form-label">Eau (Quantité normalisée)</label>
+                    <input type="range" class="form-range" min="-2.5" max="2.5" step="0.01" id="eau" name="eau"
+                        oninput="eauValue.textContent = this.value">
+                    <span class="slider-value" id="eauValue">0.00</span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="sable" class="form-label">Sable (Quantité normalisée)</label>
+                    <input type="range" class="form-range" min="-2.5" max="2.5" step="0.01" id="sable" name="sable"
+                        oninput="sableValue.textContent = this.value">
+                    <span class="slider-value" id="sableValue">0.00</span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="gravier" class="form-label">Gravier (Quantité normalisée)</label>
+                    <input type="range" class="form-range" min="-2.5" max="2.5" step="0.01" id="gravier" name="gravier"
+                        oninput="gravierValue.textContent = this.value">
+                    <span class="slider-value" id="gravierValue">0.00</span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="age" class="form-label">Âge (en jours, normalisé)</label>
+                    <input type="range" class="form-range" min="-0.5" max="3.0" step="0.01" id="age" name="age"
+                        oninput="ageValue.textContent = this.value">
+                    <span class="slider-value" id="ageValue">0.00</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-12">Prédire la Résistance</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include "includes/footer.html" %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialiser les valeurs affichées lors du chargement de la page
+    const elements = ['ciment', 'eau', 'sable', 'gravier', 'age'];
+    elements.forEach(id => {
+        const input = document.getElementById(id);
+        const valueSpan = document.getElementById(id + 'Value');
+        if (input && valueSpan) {
+            // Mettre à jour la valeur par défaut pour les nombres à virgule fixe
+            valueSpan.textContent = parseFloat(input.value).toFixed(2);
+            
+            // Mettre à jour l'affichage lors du changement
+            input.oninput = function() {
+                valueSpan.textContent = parseFloat(this.value).toFixed(2);
+            };
+        }
+    });
+});
+</script>

@@ -1,0 +1,48 @@
+{% include "includes/header.html" %}
+{% load static %}
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            <strong>Résultat de la Prédiction de la Résistance du Béton</strong>
+        </div>
+
+        <div class="card-body">
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+                    <h5 class="card-title">
+                        Résistance du Béton Prédite :
+                    </h5>
+                    <p class="display-4 text-success">
+                        <strong>{{ predicted_resistance|floatformat:2 }}</strong>
+                        <small class="text-muted">MPa (Normalisé)</small>
+                    </p>
+                    
+                    <hr>
+                    
+                    <p class="text-muted">
+                        Cette valeur est la prédiction de résistance basée sur les proportions de Ciment, Eau, Sable, Gravier et l'âge que vous avez fournies.
+                    </p>
+                </div>
+                
+                <div class="col-md-6 text-center">
+                    <img src="{% static img_vehicule  %}" 
+                         class="img-fluid rounded shadow" 
+                         alt="Illustration de la résistance du béton"
+                         style="max-width: 80%;">
+                    
+                    <small class="d-block mt-2 text-muted">Illustration d'un test de résistance.</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-footer text-center">
+            <a href="{% url 'svm_tester' %}" class="btn btn-outline-secondary">
+                Effectuer une nouvelle prédiction
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include "includes/footer.html" %}
